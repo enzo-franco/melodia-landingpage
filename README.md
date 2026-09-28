@@ -23,13 +23,6 @@ Abra `index.html` no navegador. É preciso estar conectado à internet para carr
 - `assets/perfis.png`: retratos ilustrativos dos depoimentos.
 - `assets/azimuth.mp3`: faixa de demonstração reproduzida pelo player nativo do HTML.
 
-## O que mostrar na apresentação
-
-1. Estrutura semântica: `header`, `nav`, `main`, `section`, `form` e `footer`.
-2. Classes Tailwind de layout responsivo, por exemplo `grid`, `md:grid-cols-2`, `px-5` e `py-20`.
-3. Estados vistos em aula: `hover`, `focus`, `active`, `group-hover`, `peer-checked`, `valid` e `invalid`.
-4. JavaScript em `app.js`: `addEventListener`, `classList.toggle`, `play()` e `preventDefault`. O player e o efeito semitransparente do menu são feitos em HTML/Tailwind.
-5. Teste em telas largas e estreitas, incluindo abertura do menu mobile, modo escuro e validação do formulário.
 
 **Privacidade:** o formulário é uma simulação. Nome e e-mail não são enviados, salvos nem compartilhados. O aplicativo, os perfis e os depoimentos da página são ilustrativos.
 
