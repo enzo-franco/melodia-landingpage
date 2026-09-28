@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Melodia: descubra músicas, monte playlists e encontre novos artistas.">
+  <title>Melodia | Sua Música, Sua Forma</title>
+
+  <!-- Tailwind e fontes usadas na aula -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Manrope', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="bg-white font-sans text-slate-900 dark:bg-slate-900 dark:text-white">
+  <!-- O menu fica fixo e semitransparente usando classes do Tailwind. -->
+  <header id="cabecalho" class="fixed left-0 top-0 z-40 w-full border-b border-white/50 bg-white/70 backdrop-blur-sm transition duration-300 dark:border-slate-700 dark:bg-slate-900/80">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="#inicio" class="text-xl font-extrabold tracking-tight text-violet-900 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 dark:text-white">
+        <i class="fa-solid fa-music mr-2 text-fuchsia-600" aria-hidden="true"></i>melodia
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm font-semibold md:flex" aria-label="Menu principal">
+        <a href="#beneficios" class="hover:text-fuchsia-600 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">Benefícios</a>
+        <a href="#funcionalidades" class="hover:text-fuchsia-600 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">Funcionalidades</a>
+        <a href="#depoimentos" class="hover:text-fuchsia-600 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">Depoimentos</a>
+        <a href="#contato" class="rounded-full bg-violet-900 px-5 py-2 text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500">Contato</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="modo-escuro" type="button" class="rounded-lg p-2 text-violet-900 hover:bg-violet-100 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 dark:text-white dark:hover:bg-slate-800" aria-label="Alternar tema claro ou escuro">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="botao-menu" type="button" class="rounded-lg p-2 text-violet-900 hover:bg-violet-100 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 dark:text-white dark:hover:bg-slate-800 md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <nav id="menu-mobile" class="hidden border-t border-violet-100 bg-white px-5 py-3 text-sm font-semibold dark:border-slate-700 dark:bg-slate-900 md:hidden" aria-label="Menu para celular">
+      <a href="#beneficios" class="block py-3 hover:text-fuchsia-600">Benefícios</a>
+      <a href="#funcionalidades" class="block py-3 hover:text-fuchsia-600">Funcionalidades</a>
+      <a href="#depoimentos" class="block py-3 hover:text-fuchsia-600">Depoimentos</a>
+      <a href="#contato" class="block py-3 hover:text-fuchsia-600">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: título, descrição, CTA e imagem demonstrativa do aplicativo. -->
+    <section id="inicio" class="bg-gradient-to-b from-violet-50 to-white px-5 pb-20 pt-32 dark:from-slate-800 dark:to-slate-900">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-5 text-sm font-bold text-fuchsia-700">Música para cada momento</p>
+          <h1 class="max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-violet-950 dark:text-white sm:text-5xl lg:text-6xl">
+            Melodia: Sua Música, Sua Forma
+          </h1>
+          <p class="mt-6 max-w-lg text-lg leading-8 text-slate-600 dark:text-slate-300">
+            Descubra novas faixas, organize suas playlists e encontre artistas que combinam com você.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-5">
+            <a id="ouvir-agora" href="#player" class="rounded-full bg-fuchsia-600 px-7 py-3 font-bold text-white transition duration-300 hover:bg-fuchsia-700 focus:outline-none focus:ring-4 focus:ring-fuchsia-300 active:bg-fuchsia-800">
+              Ouvir Agora
+            </a>
+            <a href="#funcionalidades" class="font-bold text-violet-900 underline decoration-fuchsia-500 underline-offset-4 hover:text-fuchsia-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 dark:text-violet-200">
+              Conhecer o app
+            </a>
+          </div>
+          <div class="mt-8 max-w-lg rounded-2xl border border-violet-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
+            <p class="font-bold text-violet-950 dark:text-white">Experimente uma música</p>
+            <p class="mb-3 text-sm text-slate-600 dark:text-slate-300">Azimuth — Jason Shaw</p>
+            <audio id="player" controls preload="metadata" class="w-full scroll-mt-32">
+              <source src="assets/azimuth.mp3" type="audio/mpeg">
+              Seu navegador não suporta reprodução de áudio.
+            </audio>
+            <p class="mt-3 text-xs leading-5 text-slate-500 dark:text-slate-400">
+              <a href="http://audionautix.com" class="underline hover:text-fuchsia-600">music by audionautix.com</a> ·
+              <a href="https://creativecommons.org/licenses/by/3.0/" class="underline hover:text-fuchsia-600">CC BY 3.0</a> ·
+              <a href="https://commons.wikimedia.org/wiki/File:Audionautix-com-ccby-azimuth.mp3" class="underline hover:text-fuchsia-600">fonte do áudio</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center rounded-3xl bg-violet-950 p-6 shadow-xl">
+          <img src="assets/app-melodia.png" alt="Demonstração da tela de reprodução do aplicativo Melodia" class="w-full max-w-sm rounded-2xl object-contain">
+        </div>
+      </div>
+    </section>
+
+    <!-- Apresentação dos benefícios com ícones do Font Awesome. -->
+    <section id="beneficios" class="scroll-mt-20 px-5 py-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-3 text-sm font-bold text-fuchsia-700">Por que usar o Melodia</p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-violet-950 dark:text-white md:text-4xl">Sua música fica mais próxima</h2>
+          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">Uma experiência simples para ouvir o que você ama e descobrir o que vem depois.</p>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group rounded-2xl border border-violet-100 p-6 transition duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+            <i class="fa-solid fa-headphones text-3xl text-fuchsia-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-bold group-hover:text-fuchsia-600">Som de qualidade</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Mais atenção aos detalhes das suas faixas favoritas.</p>
+          </article>
+          <article class="group rounded-2xl border border-violet-100 p-6 transition duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+            <i class="fa-solid fa-list-ul text-3xl text-fuchsia-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-bold group-hover:text-fuchsia-600">Playlists pessoais</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Suas seleções organizadas para cada momento.</p>
+          </article>
+          <article class="group rounded-2xl border border-violet-100 p-6 transition duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+            <i class="fa-solid fa-compass text-3xl text-fuchsia-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-bold group-hover:text-fuchsia-600">Novos artistas</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Descobertas que ampliam o que você escuta.</p>
+          </article>
+          <article class="group rounded-2xl border border-violet-100 p-6 transition duration-300 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800">
+            <i class="fa-solid fa-hand-pointer text-3xl text-fuchsia-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-bold group-hover:text-fuchsia-600">Fácil de usar</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Uma interface clara desde o primeiro acesso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Funcionalidades em cards separados. -->
+    <section id="funcionalidades" class="scroll-mt-20 bg-violet-50 px-5 py-20 dark:bg-slate-800">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-3 text-sm font-bold text-fuchsia-700">Funcionalidades</p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-violet-950 dark:text-white md:text-4xl">Tudo no seu ritmo</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl bg-white p-7 shadow-sm dark:bg-slate-700">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-fuchsia-100 text-fuchsia-700">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Monte sua playlist</h3>
+            <p class="mt-3 leading-7 text-slate-600 dark:text-slate-200">Escolha músicas e crie uma seleção para estudar, relaxar ou sair.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-7 shadow-sm dark:bg-slate-700">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-fuchsia-100 text-fuchsia-700">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Explore artistas</h3>
+            <p class="mt-3 leading-7 text-slate-600 dark:text-slate-200">Passe por recomendações e encontre novas vozes para ouvir.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-7 shadow-sm dark:bg-slate-700">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-fuchsia-100 text-fuchsia-700">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-bold">Salve favoritas</h3>
+            <p class="mt-3 leading-7 text-slate-600 dark:text-slate-200">Guarde o que gostou para encontrar de novo sem procurar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos e fotos são ilustrativos porque o app ainda é um conceito. -->
+    <section id="depoimentos" class="scroll-mt-20 px-5 py-20">
+      <div class="mx-auto max-w-6xl">
+        <p class="mb-3 text-sm font-bold text-fuchsia-700">Depoimentos</p>
+        <h2 class="text-3xl font-extrabold tracking-tight text-violet-950 dark:text-white md:text-4xl">A música faz parte da rotina</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <figure class="flex flex-col justify-between rounded-2xl border border-violet-100 p-6 dark:border-slate-700 dark:bg-slate-800">
+            <blockquote class="leading-7">“Encontrei músicas novas sem perder aquelas que já gosto de ouvir.”</blockquote>
+            <figcaption class="mt-7 flex items-center gap-3">
+              <img src="assets/perfis.png" alt="Retrato ilustrativo de Luana" class="h-12 w-12 rounded-full object-cover object-left">
+              <span><strong class="block">Luana</strong><small class="text-slate-500 dark:text-slate-400">Perfil fictício</small></span>
+            </figcaption>
+          </figure>
+          <figure class="flex flex-col justify-between rounded-2xl border border-violet-100 p-6 dark:border-slate-700 dark:bg-slate-800">
+            <blockquote class="leading-7">“Ter uma playlist para cada momento deixa tudo mais prático.”</blockquote>
+            <figcaption class="mt-7 flex items-center gap-3">
+              <img src="assets/perfis.png" alt="Retrato ilustrativo de Rafael" class="h-12 w-12 rounded-full object-cover object-center">
+              <span><strong class="block">Rafael</strong><small class="text-slate-500 dark:text-slate-400">Perfil fictício</small></span>
+            </figcaption>
+          </figure>
+          <figure class="flex flex-col justify-between rounded-2xl border border-violet-100 p-6 dark:border-slate-700 dark:bg-slate-800">
+            <blockquote class="leading-7">“A tela é simples e consigo chegar rápido às minhas favoritas.”</blockquote>
+            <figcaption class="mt-7 flex items-center gap-3">
+              <img src="assets/perfis.png" alt="Retrato ilustrativo de Vitória" class="h-12 w-12 rounded-full object-cover object-right">
+              <span><strong class="block">Vitória</strong><small class="text-slate-500 dark:text-slate-400">Perfil fictício</small></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário responsivo: simulação solicitada, sem armazenamento de dados. -->
+    <section id="contato" class="scroll-mt-20 bg-violet-950 px-5 py-20 text-white">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-3 text-sm font-bold text-fuchsia-300">Fique por perto</p>
+          <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Novidades da Melodia no seu e-mail</h2>
+          <p class="mt-4 leading-7 text-violet-100">Experimente o formulário desta página. Ele valida o e-mail, mas não envia nem guarda seus dados.</p>
+        </div>
+        <form id="formulario" class="rounded-2xl bg-white p-6 text-slate-900 shadow-lg" onsubmit="return false">
+          <label for="nome" class="mb-2 block font-bold">Seu nome</label>
+          <input id="nome" name="nome" type="text" required minlength="2" placeholder="Digite seu nome" autocomplete="name"
+            class="mb-4 w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:invalid:border-red-500 focus:valid:border-green-600">
+          <label for="email" class="mb-2 block font-bold">Seu e-mail</label>
+          <input id="email" name="email" type="email" required placeholder="voce@exemplo.com" autocomplete="email"
+            class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:invalid:border-red-500 focus:valid:border-green-600">
+          <div class="mt-4">
+            <input id="confirmar" type="checkbox" required class="peer h-4 w-4 accent-fuchsia-600">
+            <label for="confirmar" class="ml-2 text-sm">Entendi que este formulário é só uma simulação.</label>
+            <p class="mt-2 hidden text-sm text-green-700 peer-checked:block">Pronto! O botão está liberado.</p>
+          </div>
+          <button type="submit" class="mt-4 w-full rounded-lg bg-fuchsia-600 px-5 py-3 font-bold text-white transition duration-300 hover:bg-fuchsia-700 focus:outline-none focus:ring-4 focus:ring-fuchsia-300 active:bg-fuchsia-800">
+            Quero receber novidades
+          </button>
+          <p id="mensagem" class="mt-3 min-h-6 text-sm font-semibold text-violet-900" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contato, redes sociais e política de privacidade. -->
+  <footer class="bg-slate-950 px-5 py-10 text-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-7 md:flex-row md:justify-between">
+      <div>
+        <p class="text-xl font-extrabold"><i class="fa-solid fa-music mr-2 text-fuchsia-400" aria-hidden="true"></i>melodia</p>
+        <p class="mt-2 text-sm text-slate-300">Um conceito de aplicativo para quem gosta de música.</p>
+      </div>
+      <div>
+        <p class="font-bold">Contato</p>
+        <p class="mt-2 text-sm text-slate-300">contato@melodia.example</p>
+        <a href="#" class="mt-2 inline-block text-sm text-slate-300 hover:text-fuchsia-300">Repositório do projeto</a>
+      </div>
+      <div>
+        <p class="font-bold">Redes sociais</p>
+        <a href="#" class="mt-2 mr-4 inline-block text-sm text-slate-300 hover:text-fuchsia-300">
+          <i class="fa-brands fa-github mr-1" aria-hidden="true"></i>GitHub
+        </a>
+        <a href="https://www.instagram.com/" class="mt-2 inline-block text-sm text-slate-300 hover:text-fuchsia-300">
+          <i class="fa-brands fa-instagram mr-1" aria-hidden="true"></i>Instagram
+        </a>
+      </div>
+    </div>
+    <details class="mx-auto mt-8 max-w-6xl border-t border-slate-700 pt-5 text-sm text-slate-300">
+      <summary class="w-fit cursor-pointer hover:text-white">Política de privacidade</summary>
+      <p class="mt-3 max-w-2xl leading-6">Esta página é um projeto acadêmico. O formulário apenas demonstra a validação de e-mail: os dados digitados não são enviados nem armazenados.</p>
+    </details>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
